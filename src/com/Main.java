@@ -98,7 +98,8 @@ public class Main {
                             copyAuto.doIt();
 
                             System.out.println("复制完成");
-                            if (three() == 1) {
+                            int returnNum=three();
+                            if (returnNum == 1) {
                                 dialog.setVisible(false);
                                 dialog.dispose();
                                 System.out.println("上传成功！");
@@ -107,6 +108,26 @@ public class Main {
                                 setSysClipboardText(realURL);
                                 field.setText(realURL);
                                 JOptionPane.showMessageDialog(null, "已复制到粘贴板");
+                            }else if(returnNum==2){
+                                dialog.setVisible(false);
+                                dialog.dispose();
+                                JOptionPane.showMessageDialog(null, "WDNMD 原来是git add . 这一步出错了");
+                                return false;
+                            }else if(returnNum==3){
+                                dialog.setVisible(false);
+                                dialog.dispose();
+                                JOptionPane.showMessageDialog(null, "WDNMD 原来是git commit 这一步出错了");
+                                return false;
+                            }else if(returnNum==4){
+                                dialog.setVisible(false);
+                                dialog.dispose();
+                                JOptionPane.showMessageDialog(null, "WDNMD 原来是git push   这一步出错了");
+                                return false;
+                            }else {
+                                dialog.setVisible(false);
+                                dialog.dispose();
+                                JOptionPane.showMessageDialog(null, "WDNMD git上传过程中出错了 请重试");
+                                return false;
                             }
 
 
@@ -207,6 +228,9 @@ public class Main {
 
             this.add(field);
             this.setJMenuBar(menuBar);
+
+            Font font=new Font("微软雅黑",Font.BOLD,46);
+            this.setFont(font);
             this.setVisible(true);
         }
     }
@@ -272,8 +296,14 @@ public class Main {
                 if (jgitUtil.commit() == 1) {
                     if (jgitUtil.push() == 1) {
                         return 1;
+                    }else {
+                        return 4;
                     }
+                }else {
+                    return 3;
                 }
+            }else {
+                return 2;
             }
         } catch (Exception e) {
             e.printStackTrace();

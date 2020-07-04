@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
 Main-Class: com.Main
-Class-Path: org.eclipse.jgit-5.8.0.202006091008-r.jar slf4j-api-1.7.9.ja
- r json-org-build20180908.jar
+Class-Path: org.eclipse.jgit-5.8.0.202006091008-r.jar json-org-build2018
+ 0908.jar slf4j-api-1.7.9.jar
 

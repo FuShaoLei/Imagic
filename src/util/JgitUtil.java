@@ -29,20 +29,39 @@ public class JgitUtil {
 
     }
 
-    public int addAll() throws Exception{
-        git.add().addFilepattern(".").call();
-        System.out.println("添加修改到暂存区");
-        return 1;
+    public int addAll(){
+        try{
+            git.add().addFilepattern(".").call();
+            System.out.println("添加修改到暂存区");
+            return 1;
+        }catch (Exception e){
+            e.printStackTrace();
+
+        }
+        return 0;
     }
-    public int commit() throws Exception{
-        git.commit().setMessage("Upload by Imagic0.1").call();
-        System.out.println("往分支上提交修改");
-        return 1;
+    public int commit() {
+        try{
+            git.commit().setMessage("Upload by Imagic v 0.2").call();
+            System.out.println("往分支上提交修改");
+            return 1;
+        }catch (Exception e){
+            e.printStackTrace();
+
+        }
+        return 0;
+
     }
-    public int push() throws Exception{
-        git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(this.username,this.password)).call();
-        System.out.println("提交到远程仓库");
-        return 1;
+    public int push(){
+        try {
+            git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(this.username,this.password)).call();
+            System.out.println("提交到远程仓库");
+            return 1;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return 0;
     }
 
 }

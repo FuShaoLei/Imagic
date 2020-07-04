@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact name="Imagic v 0.1:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Imagic_v_0_1_jar</output-path>
+    <root id="root">
+      <element id="archive" name="Imagic v 0.1.jar">
+        <element id="module-output" name="Imagic v 0.1" />
+      </element>
+      <element id="file-copy" path="$PROJECT_DIR$/libs/org.eclipse.jgit-5.8.0.202006091008-r.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/libs/slf4j-api-1.7.9.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/libs/json-org-build20180908.jar" />
+    </root>
+  </artifact>
+</component>

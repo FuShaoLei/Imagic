@@ -1,4 +1,4 @@
-package com;
+package util;
 
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.internal.storage.file.FileRepository;
@@ -35,7 +35,7 @@ public class JgitUtil {
         return 1;
     }
     public int commit() throws Exception{
-        git.commit().setMessage("holy fuck").call();
+        git.commit().setMessage("update by Imagic").call();
         System.out.println("往分支上提交修改");
         return 1;
     }
@@ -46,4 +46,3 @@ public class JgitUtil {
     }
 
 }
-

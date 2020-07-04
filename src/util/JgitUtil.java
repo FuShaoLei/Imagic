@@ -35,7 +35,7 @@ public class JgitUtil {
         return 1;
     }
     public int commit() throws Exception{
-        git.commit().setMessage("update by Imagic").call();
+        git.commit().setMessage("Upload by Imagic0.1").call();
         System.out.println("往分支上提交修改");
         return 1;
     }

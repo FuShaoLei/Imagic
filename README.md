@@ -18,8 +18,16 @@
 
 - 用户名
 - 密码
-- 本地的仓库
-- 远程的仓库
+- 本地的仓库 （绝对路径，需要有.git，注意：不能在C盘里）
+- 远程的仓库 （git@github.com:username/repo.git）
+
+> 示例
+> 用户名：example
+> 密码：example123
+> 本地仓库：F:/source/images
+> 远程仓库：git@github.com:example/example.git
+
+
 
 这么做后Imagic会再本地生成一个json文件用于存储你配置的内容
 

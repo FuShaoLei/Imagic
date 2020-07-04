@@ -20,6 +20,7 @@ public class Main {
     //要配置的东西 example
     public static String localRepoPath = "";//本地的git仓库
     public static String remoteRepoURL = "";//远程的git仓库
+    public static String remoteRepoName="";//远程的git仓库的名字
     public static String username = "";//用户名
     public static String password = "";//密码
 
@@ -59,7 +60,7 @@ public class Main {
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
             field = new JTextField();
-            field.setBounds(50, 60, 400, 80);
+            field.setBounds(16, 20, 450, 200);
 
 
             field.setTransferHandler(new TransferHandler() {
@@ -79,6 +80,10 @@ public class Main {
                         }
                         filepath = filepath.replaceAll("\\\\", "/");
                         oldURL = filepath;
+                        if (username.isEmpty() != false || password.isEmpty() != false || localRepoPath.isEmpty() != false || remoteRepoURL.isEmpty() != false) {
+                            JOptionPane.showMessageDialog(null,"弟弟 你配置都没弄 想啥呢？","warning",JOptionPane.QUESTION_MESSAGE);
+                            return false;
+                        }
                         JOptionPane wait=new JOptionPane("uploading..");
                         JDialog dialog=wait.createDialog("uploading");
                         dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -97,7 +102,7 @@ public class Main {
                                 dialog.setVisible(false);
                                 dialog.dispose();
                                 System.out.println("上传成功！");
-                                realURL = "https://cdn.jsdelivr.net/gh/fushaolei/imguploadtest/" + temp + type(oldURL);
+                                realURL = "https://cdn.jsdelivr.net/gh/"+username+"/"+remoteRepoName+"/" + temp + type(oldURL);
                                 System.out.println(realURL);
                                 setSysClipboardText(realURL);
                                 field.setText(realURL);
@@ -138,10 +143,12 @@ public class Main {
                     System.out.println(username);
                     password = JOptionPane.showInputDialog("密码");
                     System.out.println(password);
+                    remoteRepoName=JOptionPane.showInputDialog("远程仓库的名字");
+                    System.out.println(remoteRepoName);
                     localRepoPath = JOptionPane.showInputDialog("本地仓库路径");
                     localRepoPath = localRepoPath.replaceAll("\\\\", "/");
                     System.out.println(localRepoPath);
-                    remoteRepoURL = JOptionPane.showInputDialog("远程仓库路径");
+                    remoteRepoURL = "git@github.com:"+username+"/"+remoteRepoName+".git";
                     System.out.println(remoteRepoURL);
 
 
@@ -153,6 +160,7 @@ public class Main {
                         json.put("password", password);
                         json.put("localRepoPath", localRepoPath);
                         json.put("remoteRepoURL", remoteRepoURL);
+                        json.put("remoteRepoName",remoteRepoName);
 
                         File file = new File("message.json");
                         try {
@@ -169,7 +177,7 @@ public class Main {
             show.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    String message = "配置不全，请重新配置";
+                    String message = "弟弟 你配置不全";
                     if (username.isEmpty() == false && password.isEmpty() == false && localRepoPath.isEmpty() == false && remoteRepoURL.isEmpty() == false) {
                         message = "用户名是：" + username + "  " + "密码是：" + password + "  " + "本地仓库路径是：" + localRepoPath + "  " + "远程仓库地址是：" + remoteRepoURL;
                     }
@@ -229,6 +237,7 @@ public class Main {
         password = json.getString("password");
         localRepoPath = json.getString("localRepoPath");
         remoteRepoURL = json.getString("remoteRepoURL");
+        remoteRepoName=json.getString("remoteRepoName");
 
         System.out.println("用户名是：" + username + "  " + "密码是：" + password + "  " + "本地仓库路径是：" + localRepoPath + "  " + "远程仓库地址是：" + remoteRepoURL);
     }

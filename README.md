@@ -3,6 +3,7 @@
 
 ## Content
 - [Screenshots](#Screenshots)
+- [Download](#Download)
 - [Setting](#Setting)
 - [ChangeLog](#ChangeLog)
 - [Contact](#Contact)
@@ -18,6 +19,12 @@
 
 
 ![](https://cdn.jsdelivr.net/gh/fushaolei/ImagitcTest/test.gif)
+
+## Download
+请到码云中下载，github这个上传发行版本太慢了TAT
+
+指路 https://gitee.com/FuShaoLei/Imagic/releases
+
 ## Setting
 ![](https://cdn.jsdelivr.net/gh/fushaolei/imguploadtest/20200704182547.png)
 

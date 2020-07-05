@@ -26,13 +26,13 @@
 - 用户名
 - 密码
 - github的仓库名
-- 本地的仓库 （绝对路径，需要有.git，注意：不能在C盘里）
+- 本地的仓库 （绝对路径，需要有.git，注意：**不能在C盘里**）
 
 > 示例
-> 用户名：example
-> 密码：example123
-> 本地仓库：F:/source/images
-> 远程仓库：git@github.com:example/example.git
+> - 用户名：example
+> - 密码：example123
+> - github的仓库名：img
+> - 本地仓库：F:/source/images
 
 
 

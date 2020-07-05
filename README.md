@@ -2,11 +2,11 @@
 一款github图片上传并返回jsdelivr加速链接的小工具
 
 ## Content
-- [预览](#Screenshots)
-- [配置](#Setting)
-- [更新历史](#Change Log)
-- [联系我](#Contact)
-- [MIT License](#MIT License)
+- [Screenshots](#Screenshots)
+- [Setting](#Setting)
+- [ChangeLog](#ChangeLog)
+- [Contact](#Contact)
+
 
 
 ## Screenshots
@@ -38,7 +38,7 @@
 
 这么做后Imagic会再本地生成一个json文件用于存储你配置的内容
 
-## Change Log
+## ChangeLog
 
 ### 2020/07/03
 - ✅完成依据位置信息上传功能（依据JGit）

@@ -1,6 +1,8 @@
 # Imagic
 一款github图片上传并返回jsdelivr加速链接的小工具
 
+## 🚧项目停更 待重启
+
 ## Content
 - [Screenshots](#Screenshots)
 - [Download](#Download)
